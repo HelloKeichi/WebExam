@@ -33,10 +33,9 @@ class course_group extends Model
     }
 
     public static function search($search)
-    {/*
+    {
         return empty($search)
             ? static::query()
-            : static::query()->where('id', 'like', '%' . $search . '%')
-            ->orWhere('name', 'like', '%' . $search . '%');*/
+            : static::query()->where('name', 'like', '%' . $search . '%');
     }
 }

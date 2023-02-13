@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Course_group;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CourseGroupSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class CourseGroupSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('course_group')->insert([
+        DB::table('course_groups')->insert([
             [
                 'name'          => '语文',
                 'created_at'    => now(),
@@ -34,6 +35,6 @@ class CourseGroupSeeder extends Seeder
             ],
         ]);
 
-        Tag::factory()->count(10)->create();
+        //Course_group::factory()->count(10)->create();
     }
 }

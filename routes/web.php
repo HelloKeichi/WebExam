@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Course_group;
+use App\Http\Livewire\CourseGroup;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +17,14 @@ use App\Http\Livewire\Course_group;
 Route::get('/', function () {
     return view('welcome');
 });
-/*
-Route::prefix('admin')->group(['middleware' => ['auth', 'verified']], function () {
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
     /* Name: course_group
      * Url: /course_group/*
-     * Route: course_group.*
+     * Route: course_group.*/
 
-    Route::get('course_group', Course_group::class)->name('course_group');
-});*/
+    Route::get('/course_group', CourseGroup::class)->name('course_group');
+});
 
 Route::middleware([
     'auth:sanctum',
