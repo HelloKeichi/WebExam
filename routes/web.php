@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\CourseGroup;
+use App\Http\Livewire\CourseGroups;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
     /* Name: course_group
      * Url: /course_group/*
      * Route: course_group.*/
 
-    Route::get('/course_group', CourseGroup::class)->name('course_group');
+    Route::get('/course_group', CourseGroups::class)->name('course_group');
 });
 
 Route::middleware([

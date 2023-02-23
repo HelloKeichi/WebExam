@@ -4,11 +4,11 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class CourseGroup extends Component
+class CourseGroups extends Component
 {
     public function render()
     {
-        return view('livewire.course-group')
+        return view('livewire.course-groups')
         ->layout('layouts.app');
     }
 }

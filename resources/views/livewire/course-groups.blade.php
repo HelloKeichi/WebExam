@@ -7,7 +7,7 @@
     <div class="space-y-6">
 
         {{-- "R": Read -> INDEX --}}
-        <livewire:course-group.index />
+        <livewire:course-groups.index />
 
     </div>
 </div>
