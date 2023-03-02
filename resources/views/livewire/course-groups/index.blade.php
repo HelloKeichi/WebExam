@@ -68,7 +68,7 @@
 
                     <td class="flex space-x-4">
                         {{-- Edit Button --}}
-                        {{--<livewire:course-groups.edit :course_group="$course_group" :wire:key="'edit-course-group'. now() . $course_group->id()" />--}}
+                        <livewire:course-groups.edit :course_group="$course_group" :wire:key="'edit-course-group'. now() . $course_group->id()" />
 
                         {{-- Delete Button --}}
                         <livewire:course-groups.delete :course_group="$course_group" :wire:key="'delete-course-group'. $course_group->id()">
@@ -97,7 +97,27 @@
     }
 
     window.addEventListener('updated', sweetAlertFire, false);
-    window.addEventListener('Course_groupDeleted', sweetAlertFire, false);
+    window.addEventListener('Course-groupDeleted', sweetAlertFire, false);
+
+    
+window.addEventListener('Course-groupDeleted', event => {
+    alert('Name updated to: ' + event.detail.title);
+})
 
 </script>
 @endpush
+
+<script>
+window.addEventListener('Course-groupDeleted', e => {
+        Swal.fire({
+                title: e.detail.title
+                , icon: e.detail.icon
+                , iconColor: e.detail.iconColor
+                , timer: 3000
+                , toast: true
+                , position: 'top-right'
+                , timerProgressBar: true
+                , showConfirmButton: false
+            , });
+    }, false);
+</script>

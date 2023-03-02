@@ -20,7 +20,7 @@ class Delete extends Component
     {
         //$this->course_group->delete();
 
-        $this->dispatchBrowserEvent('Course_groupDeleted', [
+        $this->dispatchBrowserEvent('Course-groupDeleted', [
             'title'         => 'Course Group Deleted!',
             'icon'          => 'warning',
             'iconColor'     => 'red',

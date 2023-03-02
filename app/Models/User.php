@@ -18,7 +18,9 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use HasTeams;
     use Notifiable;
-    use TwoFactorAuthenticatable;
+    use TwoFactorAuthenticatable; 
+    // The User model requires this trait when using laravel permission
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
